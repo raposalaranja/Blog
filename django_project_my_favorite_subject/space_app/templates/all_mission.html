@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %}
+  NASA'S MISSIONS
+{% endblock %}
+
+{% block content %}
+  <div class="mycard">
+    <p><h1>NASA'S MISSIONS</h1></p> 
+<ul>
+  {% for x in mission %}
+    <li onclick="window.location = 'details/{{ x.id }}'">{{ x.mission_name }}</li>
+  {% endfor %}
+</ul>
+  </div>
+{% endblock %}

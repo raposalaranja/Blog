@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+{% block title %}
+                {{ mission.mission_name}}
+{% endblock %}
+
+
+{% block content %}
+  <div class="mycard">
+    <h1>{{ mission.mission_name }}</h1>  
+    <p>mission_type: {{ mission.mission_type }}</p>
+    <p>mission_duration: {{ mission.mission_duration }}</p>
+    <p>mission_launch: {{ mission.mission_launch }}</p>
+  </div>
+{% endblock %}

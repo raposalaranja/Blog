@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'myglobal.css' %}">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+  <div class="topnav">
+    <a href="/">HOME</a> |
+    <a href="/space_app">NASA'S MISSIONS</a> |
+    <a href="/space_app/staticfiles/image_collection">IMAGE COLLECTION</a>
+  </div> 
+
+  <a><p>Back to <a href="/space_app">NASA'S MISSIONS</p></a>
+  
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
