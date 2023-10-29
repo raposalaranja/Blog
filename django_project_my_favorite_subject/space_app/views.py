@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.template import loader
 from .models import Mission
+from django.views import generic
+from .models import Post
 
 def space_app(request):
   mission = Mission.objects.all().values()
@@ -27,4 +29,14 @@ def image_collection(request):
   context = {
     'image_collection': image_collection,
   }
-  return HttpResponse(template.render(context, request))  
+  return HttpResponse(template.render(context, request)) 
+
+class PostList(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'index.html'
+
+class PostDetail(generic.DetailView):
+    model = Post
+    template_name = 'post_detail.html'
+ 
+
